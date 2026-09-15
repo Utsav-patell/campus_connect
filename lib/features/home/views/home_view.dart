@@ -1,7 +1,8 @@
-import 'package:campus_connect/core/constants/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../core/constants/app_strings.dart';
+import '../../../core/routes/app_routes.dart';
 import '../controllers/home_controller.dart';
 import '../widgets/post_card.dart';
 
@@ -13,7 +14,19 @@ class HomeView extends StatelessWidget {
     final HomeController controller = Get.put(HomeController());
 
     return Scaffold(
-      appBar: AppBar(title: const Text(AppStrings.appName)),
+      appBar: AppBar(
+        title: const Text(AppStrings.appName),
+        actions: [
+          Obx(
+            () => IconButton(
+              onPressed: controller.isLoading.value
+                  ? null
+                  : controller.getPosts,
+              icon: const Icon(Icons.refresh),
+            ),
+          ),
+        ],
+      ),
       body: Obx(() {
         if (controller.isLoading.value) {
           return const Center(child: CircularProgressIndicator());
@@ -40,6 +53,12 @@ class HomeView extends StatelessWidget {
           },
         );
       }),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.toNamed(AppRoutes.createPost);
+        },
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }

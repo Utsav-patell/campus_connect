@@ -15,8 +15,9 @@ class App extends StatelessWidget {
       title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      initialRoute: AppRoutes.login,
       getPages: AppRoutes.pages,
+
+      home: const HomeView(),
     );
   }
 }
