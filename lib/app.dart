@@ -1,3 +1,4 @@
+import 'package:campus_connect/core/routes/app_routes.dart';
 import 'package:campus_connect/features/home/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,7 +15,8 @@ class App extends StatelessWidget {
       title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: const HomeView(),
+      initialRoute: AppRoutes.login,
+      getPages: AppRoutes.pages,
     );
   }
 }

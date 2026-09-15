@@ -13,4 +13,9 @@ class AppStrings {
   static const String college = 'College';
 
   static const String logout = 'Logout';
+
+  static const String connectWithCampus = 'Connect with your campus';
+  static const String loginFailed = 'Login Failed';
+  static const String somethingWentWrong = 'Something went wrong';
+  static const String dontHaveAccount = 'Don\'t have an account? Sign Up';
 }
