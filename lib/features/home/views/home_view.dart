@@ -25,6 +25,12 @@ class HomeView extends StatelessWidget {
               icon: const Icon(Icons.refresh),
             ),
           ),
+          IconButton(
+            onPressed: () {
+              Get.toNamed(AppRoutes.profile);
+            },
+            icon: const Icon(Icons.person_outline),
+          ),
         ],
       ),
       body: Obx(() {

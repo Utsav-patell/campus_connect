@@ -1,5 +1,6 @@
 import 'package:campus_connect/core/routes/app_routes.dart';
-import 'package:campus_connect/features/home/views/home_view.dart';
+import 'package:campus_connect/features/auth/views/auth_gate.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,7 +18,7 @@ class App extends StatelessWidget {
       theme: AppTheme.lightTheme,
       getPages: AppRoutes.pages,
 
-      home: const HomeView(),
+      home: const AuthGate(), // Set the initial route to the AuthGate
     );
   }
 }
